@@ -1,0 +1,48 @@
+body{
+    background: #eeeeee;
+}
+.banner{
+    display: block;
+}
+.banner img{
+    height: 100%;
+    width: 100%;
+    overflow: inherit;
+}
+
+.tools{
+    background: #fefefe;
+    margin-top: 30px;
+}
+.col{
+    border: .5px solid #eeeeee;
+    max-height: 100px;
+}
+.tools .title{
+    background: #ffffff;
+    height: 30px;
+    color: #444444;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-bottom: 0;
+    border: 1px solid #eeeeee;
+}
+.tool-content{
+    display: block;
+    padding: 10px;
+    height: 100%;
+    line-height: 100%;
+
+}
+.tool-content img.tool-img{
+    width: 50px;
+    height: 50px;
+}
+.tool-content .tooltext{
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        margin: 10px 0;
+}
