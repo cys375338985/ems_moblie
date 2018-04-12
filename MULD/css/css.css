@@ -1,6 +1,4 @@
-body{
-    background: #eeeeee;
-}
+
 .banner{
     display: block;
 }
@@ -14,14 +12,14 @@ body{
     background: #fefefe;
     margin-top: 30px;
 }
-.col{
-    border: .5px solid #eeeeee;
+.tools .col{
+    border: .2px solid #eeeeee;
     max-height: 100px;
 }
 .tools .title{
-    background: #ffffff;
+    background: #fefefe;
     height: 30px;
-    color: #444444;
+    color: darkgray;
     font-weight: bolder;
     font-size: 15px;
     line-height: 30px;
@@ -29,20 +27,21 @@ body{
     margin-bottom: 0;
     border: 1px solid #eeeeee;
 }
-.tool-content{
+.tools .tool-content{
     display: block;
     padding: 10px;
     height: 100%;
     line-height: 100%;
 
 }
-.tool-content img.tool-img{
+.tools .tool-content img.tool-img{
     width: 50px;
     height: 50px;
 }
-.tool-content .tooltext{
+.tools .tool-content .tooltext{
         display: block;
         text-align: center;
-        font-size: 10px;
+        font-size: 13px;
+        color: #222222;
         margin: 10px 0;
 }

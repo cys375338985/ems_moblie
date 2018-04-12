@@ -3,7 +3,10 @@
     margin: 0;
     font-size: 12px;
 }
- li{
+body{
+    background: #eeeeee;
+}
+li{
     list-style: none;
 }
 a{
