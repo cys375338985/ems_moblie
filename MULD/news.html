@@ -15,63 +15,64 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/news.css">
     <link rel="stylesheet" href="./css/font-awesome.min.css">
+
     <title>萍乡学院就业网</title>
 
 </head>
 <body>
     <div class="news_content">
-        <div class="scaleview container-fluid news-list">
-                <div class="new-item">
-                    <img src="./img/news.jpg"  class="new-imag">
-                    <p class="new-title">机电学院党总支召开理论学习中心组会议---深入学习“十九大党章修正案”</p>
-                 <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-                 理论学习中心组会议，对十九大党章修正案进行专题学习。
-                 会议由党总支书记王斌主持。</p>-->
-                </div>
-                <div class="new-item">
-                    <img src="./img/news7.jpg"   class="new-imag">
-                    <p class="new-title">工程与管理学院李良松院长一行赴河南高校开展国际合作办学班调研
-                    </p>
-                    <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-                    理论学习中心组会议，对十九大党章修正案进行专题学习。
-                    会议由党总支书记王斌主持。</p>-->
-                </div>
-                <div class="new-item">
-                    <img src="./img/news2.jpg" class="new-imag">
-                    <p class="new-title">体育学院教学研讨会圆满结束</p>
-                    <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-                    理论学习中心组会议，对十九大党章修正案进行专题学习。
-                    会议由党总支书记王斌主持。</p>-->
-                </div>
-                <div class="new-item">
-                    <img src="./img/news3.jpg"  class="new-imag">
-                    <p class="new-title">志愿服务送真情、党员下乡暖民心---机电学院党员活动日</p>
-                    <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-                    理论学习中心组会议，对十九大党章修正案进行专题学习。
-                    会议由党总支书记王斌主持。</p>-->
-                </div>
-                <div class="new-item">
-                    <img src="./img/news4.jpg" class="new-imag">
-                    <p class="new-title">校领导与学前教育学院学生亲切座谈</p>
-                    <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-                    理论学习中心组会议，对十九大党章修正案进行专题学习。
-                    会议由党总支书记王斌主持。</p>-->
-                </div>
-                <div class="new-item">
-                    <img src="./img/news5.jpg"   class="new-imag">
-                    <p class="new-title">政法学院召开党员会议传达学习全国两会精神</p>
-                    <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-                    理论学习中心组会议，对十九大党章修正案进行专题学习。
-                    会议由党总支书记王斌主持。</p>-->
-                </div>
-                <div class="new-item">
-            <img src="./img/news6.jpg"  class="new-imag">
-            <p class="new-title">商学院开展2018年工作调整部署会</p>
-            <!--   <p class="new-desc">4月10日，机械电子工程学院党总支召开
-            理论学习中心组会议，对十九大党章修正案进行专题学习。
-            会议由党总支书记王斌主持。</p>-->
-        </div>
-        </div>
+        <ul id="news_list" class="scaleview container-fluid news-list">
+
+        </ul>
     </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/handlebars.js/4.0.11/handlebars.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll-infinite.js"></script>
+    <script type="text/x-handlebars-template" id="news_temp">
+
+      {{#each news}}
+      <li class="new-item">
+          <img src="{{img}}"  class="new-imag">
+          <p class="new-title"><a href="{{url}}">{{title}}</a></p>
+      </li>
+      {{/each}}
+    </script>
+
+    <script type="text/javascript">
+        var pageobj = function () {
+            //var iscoll = null;
+            var _this = this;
+            this.init= function (data) {
+                var tmp =  $("#news_temp").html();
+                var tmpobj =  Handlebars.compile(tmp);
+                var news_list =  tmpobj(data);
+                console.log(news_list);
+                $('#news_list').html(news_list);
+                //iscoll =  _this.Craatiscoll();
+            };
+           // this.Craatiscoll = function (requestData,updateContent){
+           //     var op = {
+           //         mouseWheel: true,
+           //         infiniteElements: '#scroller .row',
+           //         //infiniteLimit: 2000,
+           //         dataset: requestData,
+           //         dataFiller: updateContent,
+           //         cacheSize: 1000
+//
+           //     };
+           //     return new IScroll(".news_content .news_list",op);
+           // };
+            return this;
+        }();
+        var news ={news:
+            [   {title:'机电学院党总支召开理论学习中心组会议---深入学习“十九大党章修正案”',img: "./img/news.jpg" ,url : "#"},
+                {title:'工程与管理学院李良松院长一行赴河南高校开展国际合作办学班调研',img: "./img/news7.jpg",url : "#"},
+                {title:'体育学院教学研讨会圆满结束',img: "./img/news2.jpg",url : "#"},
+                {title:'校领导与学前教育学院学生亲切座谈”',img: "./img/news4.jpg",url : "#"},
+                {title:'政法学院召开党员会议传达学习全国两会精神',img: "./img/news5.jpg",url : "#"},
+                {title:'商学院开展2018年工作调整部署会',img: "./img/news6.jpg",url : "#"}
+            ]};
+        pageobj.init(news);
+    </script>
 </body>
 </html>
