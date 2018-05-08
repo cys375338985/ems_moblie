@@ -1,0 +1,33 @@
+.article{
+    padding: 25px;
+    background: #fefefe;
+}
+.article .article-header{
+    height: 150px;
+    width: 100%;
+}
+.article .article-header .article-title{
+    font-size: 30px;
+    line-height: 35px;
+    margin: 10px 0 25px 0;
+}
+.article .article-header .article-author{
+    color: #cccccc;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.article .article-header .article-date{
+    color: #cccccc;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.article .acticle-content p{
+    font-size: 18px;
+    line-height: 25px;
+    padding-top: 10px;
+}
+
+
+

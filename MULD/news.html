@@ -20,10 +20,15 @@
 
 </head>
 <body>
-    <div class="news_content">
+    <div id="wrapper" class="news_content">
         <ul id="news_list" class="scaleview container-fluid news-list">
 
         </ul>
+
+    </div>
+    <div class="page-tuming">
+        <a href="" class="page-previous">上一页</a>
+        <a href="" class="page-next">下一页</a>
     </div>
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/handlebars.js/4.0.11/handlebars.js"></script>
@@ -48,20 +53,28 @@
                 var news_list =  tmpobj(data);
                 console.log(news_list);
                 $('#news_list').html(news_list);
-                //iscoll =  _this.Craatiscoll();
+                iscoll =  _this.Craatiscoll();
+
             };
-           // this.Craatiscoll = function (requestData,updateContent){
-           //     var op = {
-           //         mouseWheel: true,
-           //         infiniteElements: '#scroller .row',
-           //         //infiniteLimit: 2000,
-           //         dataset: requestData,
-           //         dataFiller: updateContent,
-           //         cacheSize: 1000
-//
-           //     };
-           //     return new IScroll(".news_content .news_list",op);
-           // };
+           this.Craatiscoll = function (requestData,updateContent){
+               var op = {
+                   mouseWheel: true,
+                   infiniteElements: '',
+                   infiniteLimit: 2000,
+                   dataset: _this.requestData,
+                   dataFiller: _this.updateContent,
+                   cacheSize: 1000
+               };
+               return new IScroll("#wrapper #news_list",op);
+           };
+           this.requestData= function (start,count) {
+
+           };
+           this.updateContent=function(el, data){
+               var tmp =  $("#news_temp").html();
+               var tmpobj =  Handlebars.compile(tmp);
+               var news_list =  tmpobj(data);
+           };
             return this;
         }();
         var news ={news:

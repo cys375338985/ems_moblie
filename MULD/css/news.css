@@ -34,5 +34,29 @@
     height: 20px;
     left: 95px;
     font-size: 15px;
-
+}
+.page-tuming{
+    position: fixed;
+    background: #fafafa;
+    display: flex;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
+.page-tuming a{
+    width: 50%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    border-right: 0.5px solid #cccccc;
+}
+.page-next{
+    border-right: none;
+}
+.page-tuming a:active,
+.page-tuming a:hover{
+    color: #444;
+    text-decoration: none;
+    background: #eeeeee;
 }
